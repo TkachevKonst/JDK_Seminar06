@@ -27,15 +27,12 @@ public class Game {
                         showman.choiceShowman(player, gameArea), gameArea.area.length);
                 if (gameArea.area[changeDoor]) {
                     countWin++;
-                    map.put(i + 1, "Победа");
-                    file.saveInfo((i + 1) + " - Победа", player.getName());
+                    map.put(i, "Победа");
+                    file.saveInfo(i + " - Победа", player.getName());
                 } else {
-                    map.put(i + 1, "Поражение");
-                    file.saveInfo((i + 1) + " - Поражение", player.getName());
+                    map.put(i , "Поражение");
+                    file.saveInfo(i + " - Поражение", player.getName());
                 }
-            }
-            for (int i = 0; i < COUNT_GAME; i++) {
-                System.out.println(map.get(i));
             }
             win = (countWin / COUNT_GAME) * 100;
             System.out.println("Процент побед " + player.getName() + " = " + win + "%.");
@@ -45,20 +42,23 @@ public class Game {
                 int choiceDoor = player.choiceDoor(gameArea.area.length);
                 if (gameArea.area[choiceDoor]) {
                     countWin++;
-                    map.put(i + 1, "Победа");
-                    file.saveInfo((i + 1) + " - Победа", player.getName());
+                    map.put(i, "Победа");
+                    file.saveInfo(i + " - Победа", player.getName());
                 } else {
-                    map.put(i + 1, "Поражение");
-                    file.saveInfo((i + 1) + " - Поражение", player.getName());
+                    map.put(i, "Поражение");
+                    file.saveInfo(i + " - Поражение", player.getName());
                 }
-            }
-            for (int i = 0; i < COUNT_GAME; i++) {
-                System.out.println(map.get(i));
             }
             win = (countWin / COUNT_GAME) * 100;
             System.out.println("Процент побед " + player.getName() + " = " + win + "%.");
         }
     }
 
+    public void printHashMap(){
+        for (int i = 0; i < COUNT_GAME; i++) {
+            System.out.println(i + " - " + map.get(i));
+            System.out.println("------------");
+        }
+    }
 
 }

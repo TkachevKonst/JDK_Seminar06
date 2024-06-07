@@ -8,5 +8,6 @@ public class Program {
         Game game2 = new Game("Петр", 1);
 
 
+
     }
 }
